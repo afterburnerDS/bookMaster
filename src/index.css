@@ -1,4 +1,4 @@
-html, body {
+/* html, body {
     margin: 0;
     padding: 0;
 }
@@ -40,4 +40,406 @@ h2 {
   
   input {
     display: block;
-  }
+  } */
+
+
+  /********************************************************
+LAYOUT
+********************************************************/
+:root{
+
+    --color-primary:  #FDD692;
+    --color-secondary: #754F44;
+    --color-tertiary: #FFCD70;
+    --color-quarternary: #EC7357;
+    --color--quinternary: #FBFFB9;
+    --color--red: #D83B18;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.nodisplay{
+    display:none !important;
+}
+
+html {
+    box-sizing: border-box;
+    /*1 rem = 10px*/
+    font-size: 62.5%;  
+    /* background-color: #0A1016; */
+    /* color: var(--color-grey-light-3); */
+
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: 2rem;
+    color: #754F44;
+    /* background:#FDD692; */
+}
+
+a{
+    color: #754F44;
+}
+a:hover{
+    color: inherit;
+    background-color:inherit;
+    text-decoration: none; 
+}
+
+a:focus{
+    color: inherit;
+    background-color:inherit;
+    text-decoration: none; 
+}
+
+p{
+    margin:0;
+}
+
+.container{
+    margin: 1rem auto;
+    max-width:85rem;
+    display:flex;
+    flex-direction:column;
+    border: 1px solid black;
+    /* background-color:#FBFFB9; */
+    box-shadow: 0rem 1rem 5rem rgba(0, 0, 0, .4);
+}
+
+.signout{
+    align-self: flex-end;
+    margin-top: 2rem;
+}
+
+.content_mainPage{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content_mainPage--secondary{
+
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+}
+
+.loginButton{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    font-size: 1.5rem;
+}
+
+.imgLogo{
+    height: 15rem;
+    margin-bottom: 5rem;
+}
+
+@media only screen and (max-width: 
+    550px) {
+        .imgLogo {
+           
+            height: 10rem;
+        }
+    }
+
+.titleApp{
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    font-weight: bold;
+    font-family: 'Pacifico', cursive;
+    font-size: 4rem;  
+     
+}
+
+@media only screen and (max-width: 
+    550px) {
+        .titleApp {
+           
+            font-size: 3rem;
+        }
+    }
+
+.instructions{
+    padding: 3rem;
+}
+
+.welcomeTitle{
+    margin-top: 4rem;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.happyCooking{
+    font-weight: bold;
+}
+
+.loginCredentials{
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.loginCredentials p:first-child{
+    margin-bottom: 1rem;
+}
+
+.header{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.backBtn{
+    cursor: pointer;
+}
+/********************************************************
+BOOKSHELF
+********************************************************/
+
+.bookShelf{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.bookShelf__title{
+    margin-top: 3rem;
+}
+.bookShelf__container{
+    border: 1px solid black;
+    padding: 4rem;
+    margin: 4rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.book{
+    height: 15rem;
+    width: auto;
+    border: 1px solid black;
+    flex-basis: 25%;
+    margin: 2rem;
+    cursor: pointer;
+
+}
+
+@media only screen and (max-width: 
+    550px) {
+        .book {
+          flex-basis: 100%;
+        }
+    }
+
+.newBook{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+
+}
+
+.newBook__new{
+    cursor:pointer;
+}
+
+/********************************************************
+BOOKPAGE
+********************************************************/
+.container__bookPage{
+    margin: 1rem auto;
+    max-width: 125rem;
+    display:flex;
+    flex-direction:column;
+    border: 1px solid black;
+    /* background-color:#FBFFB9; */
+    box-shadow: 0rem 1rem 5rem rgba(0, 0, 0, .4);
+}
+
+
+.bookPage{
+
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 3rem;
+}
+
+@media only screen and (max-width: 
+    700px) {
+        .bookPage {
+          flex-direction: column;
+          align-items: center;
+        }
+    }
+
+.bookPage__technical{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    /* height: 80rem; */
+    width: 40%;
+    border: 1px solid black;
+    margin-right: 2rem;
+ }
+
+ .basicDetails{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ }
+
+ .technicalDetails{
+     text-align:center;
+ }
+
+ @media only screen and (max-width: 
+    700px) {
+        .bookPage__technical {
+            /* height: 40rem; */
+          width: 100%;
+          margin-right: 0rem;
+          margin-bottom: 2rem;
+          justify-content: flex-start;
+          align-items: flex-start;
+        }
+
+        .technicalDetails{
+            text-align:left;
+        }
+    }
+
+    @media only screen and (max-width: 
+    700px) {
+        .basicDetails {
+            flex-direction: row;
+            align-items:flex-start;
+            justify-content: flex-start;
+        }
+    }
+
+    @media only screen and (max-width: 
+    450px) {
+
+        .bookPage__technical{
+            justify-content: center;
+            align-items: center;
+        }
+
+        .basicDetails{
+            flex-direction: column;
+            justify-content: center;
+            align-items:center;
+        }
+
+        .technicalDetails{
+            text-align:center;
+        }
+    }
+
+ .bookPate__annotations{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* height: 80rem; */
+    width: 60%;
+    border: 1px solid black;
+ }
+
+ @media only screen and (max-width: 
+    700px) {
+        .bookPate__annotations {
+            width: 100%;
+        }
+    }
+
+
+
+
+.titleBook{
+    margin-top: 3rem;
+}
+
+.authorBook{
+    margin-bottom: 3rem;
+}
+
+.coverBook{
+    height: 27rem;
+    width: 20rem;
+    border: 1px solid black;
+    margin: 3rem 0 3rem 0;
+}
+
+
+@media only screen and (max-width: 
+    700px) {
+        .coverBook{
+          /* height: 10rem; */
+          margin-right: 3rem;
+          margin-left: 3rem;
+          /* flex-shrink: 0; */
+        }
+    }
+
+    @media only screen and (max-width: 
+    450px) {
+        .coverBook{
+          height: 17rem;
+          width: 14rem;
+         
+        }
+    }
+
+.resumeBook{
+    margin: 3rem 0 3rem 0;
+    text-align: center;
+}
+
+.annot{
+    height: 15rem;
+    width: auto;
+    border: 1px solid black;
+    width:26%;
+    margin: 2rem;
+    cursor: pointer;
+
+}
+
+@media only screen and (max-width: 
+    450px) {
+        .annot {
+            width: 100%;
+        }
+    }
+
+    /********************************************************
+ANNOTATION
+********************************************************/
+.annotation{
+    margin: 3rem;
+}
+

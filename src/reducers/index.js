@@ -1,48 +1,46 @@
 import * as actions from '../actions';
 
 const initialState = {
-    boards: {}
+    books: []
 };
 
-const defaultBoard = {
-    lists: []
+const defaultBook = {
+    annotations: [] 
 };
 
-export const trelloReducer = (state=initialState, action) => {
-    if (action.type === actions.ADD_LIST) {
-        const {title, boardId} = action;
-        const boards = state.boards;
-        const board = Object.assign({}, defaultBoard, boards[boardId]);
-        board.lists = [...board.lists, {
-            cards: [],
+export const bookReducer = (state=initialState, action) => {
+    if (action.type === actions.ADD_BOOK) {
+        const {title} = action;
+        let books = state.books
+        books = [...state.books, {
+            annotations: [],
             title
         }];
         return Object.assign({}, state, {
-            boards: Object.assign({}, boards, {
-                [boardId]: board
-            })
+            books: books
         });
     }
-    else if (action.type === actions.ADD_CARD) {
-        const {text, boardId, listIndex} = action;
-        const boards = state.boards;
-        const board = Object.assign({}, defaultBoard, boards[boardId]);
-        board.lists = board.lists.map((list, index) => {
-            if (index !== listIndex) {
-                return list;
+    else if (action.type === actions.ADD_ANNOTATION) {
+        const {text, bookIndex} = action;
+        let books = state.books;
+        books = state.books.map((book, index) => {
+            if (book.title.replace(/ /g, "-") !== bookIndex) {
+                return book;
             }
-            return Object.assign({}, list, {
-                cards: [...list.cards, {
+             let newBook = Object.assign({}, book, {
+                annotations: [...book.annotations, {
                     text
                 }]
             });
+            console.log(newBook);
+            return newBook;
         });
 
-        return Object.assign({}, state, {
-            boards: Object.assign({}, boards, {
-                [boardId]: board
-            })
+        let finalBooks =  Object.assign({}, state, {
+            books: books
         });
+        console.log(finalBooks);
+        return finalBooks;
     }
     return state;
 };
